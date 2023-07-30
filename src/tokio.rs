@@ -123,6 +123,9 @@ where
                 PgWireFrontendMessage::Close(close) => {
                     extended_query_handler.on_close(socket, close).await?;
                 }
+                PgWireFrontendMessage::CopyData(copy_data) => {}
+                PgWireFrontendMessage::CopyDone(copy_done) => {}
+                PgWireFrontendMessage::CopyFail(copy_fail) => {}
                 _ => {}
             }
         }
